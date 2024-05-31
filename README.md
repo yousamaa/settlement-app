@@ -1,70 +1,69 @@
-# GitHub Codespaces ♥️ React
 
-Welcome to your shiny new Codespace running React! We've got everything fired up and running for you to explore React.
+# Settlement Application
 
-You've got a blank canvas to work on from a git perspective as well. There's a single initial commit with the what you're seeing right now - where you go from here is up to you!
+## Description
 
-Everything you do here is contained within this one codespace. There is no repository on GitHub yet. If and when you’re ready you can click "Publish Branch" and we’ll create your repository and push up your project. If you were just exploring then and have no further need for this code then you can simply delete your codespace and it's gone forever.
+This application provides a simple interface for managing a financial settlement between two parties (Party A and Party B). Party A can propose an amount, which Party B can either agree to or dispute. The settlement's status is updated accordingly and maintained in a SQLite database. The front end is built with React, styled with TailwindCSS, and the backend uses Node.js with an SQLite database to persist data.
 
-This project was bootstrapped for you with [Vite](https://vitejs.dev/).
+## Features
 
-## Available Scripts
+- **Real-time Settlement Updates**: Party A proposes settlements, and Party B can agree or dispute the amounts in real time.
+- **Persistent Storage**: Using SQLite database to maintain settlement states and amounts across sessions.
+- **Responsive Design**: Utilizing TailwindCSS for a responsive layout that adjusts to different screen sizes.
 
-In the project directory, you can run:
+## Getting Started
 
-### `npm start`
+### Prerequisites
 
-We've already run this for you in the `Codespaces: server` terminal window below. If you need to stop the server for any reason you can just run `npm start` again to bring it back online.
+- Node.js
+- npm (Node Package Manager)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000/](http://localhost:3000/) in the built-in Simple Browser (`Cmd/Ctrl + Shift + P > Simple Browser: Show`) to view your running application.
+### Installation
 
-The page will reload automatically when you make changes.\
-You may also see any lint errors in the console.
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/yourusername/settlement-app.git
+   cd settlement-app
+   ```
 
-### `npm test`
+2. **Install dependencies for the backend**:
+   ```bash
+   cd backend
+   npm install
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. **Install dependencies for the frontend**:
+   ```bash
+   npm install
+   ```
 
-### `npm run build`
+### Running the Application
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Start the backend server**:
+   ```bash
+   cd backend
+   node server.js
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **Run the frontend application** in a new terminal window:
+   ```bash
+   cd ../frontend
+   npm start
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. **Open your browser** and navigate to `http://localhost:3000` to view the app.
 
-## Learn More
+## Usage
 
-You can learn more in the [Vite documentation](https://vitejs.dev/guide/).
+- **Party A Interface**: Input an amount and submit. The status will update based on Party B's response.
+- **Party B Interface**: View the proposed amount and choose to agree or dispute. The status will reflect the action chosen.
 
-To learn Vitest, a Vite-native testing framework, go to [Vitest documentation](https://vitest.dev/guide/)
+## Technologies
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://sambitsahoo.com/blog/vite-code-splitting-that-works.html](https://sambitsahoo.com/blog/vite-code-splitting-that-works.html)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://github.com/btd/rollup-plugin-visualizer#rollup-plugin-visualizer](https://github.com/btd/rollup-plugin-visualizer#rollup-plugin-visualizer)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://dev.to/hamdankhan364/simplifying-progressive-web-app-pwa-development-with-vite-a-beginners-guide-38cf](https://dev.to/hamdankhan364/simplifying-progressive-web-app-pwa-development-with-vite-a-beginners-guide-38cf)
-
-### Advanced Configuration
-
-This section has moved here: [https://vitejs.dev/guide/build.html#advanced-base-options](https://vitejs.dev/guide/build.html#advanced-base-options)
-
-### Deployment
-
-This section has moved here: [https://vitejs.dev/guide/build.html](https://vitejs.dev/guide/build.html)
-
-### Troubleshooting
-
-This section has moved here: [https://vitejs.dev/guide/troubleshooting.html](https://vitejs.dev/guide/troubleshooting.html)
+- **Frontend**:
+  - React.js
+  - TailwindCSS
+- **Backend**:
+  - Node.js
+  - Express.js
+  - SQLite3
