@@ -1,27 +1,29 @@
-import './App.css';
+import React, { useState } from 'react';
+import PartyA from './PartyA';
+import PartyB from './PartyB';
+import 'tailwindcss/tailwind.css';
 
 function App() {
+  const [amount, setAmount] = useState('');
+  const [status, setStatus] = useState('pending');
+
+  const handleAmountChange = (newAmount) => {
+    setAmount(newAmount);
+    setStatus('pending');
+  };
+
+  const handleSettle = () => {
+    setStatus('settled');
+  };
+
+  const handleDispute = () => {
+    setStatus('dispute');
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src="Octocat.png" className="App-logo" alt="logo" />
-        <p>
-          GitHub Codespaces <span className="heart">♥️</span> React
-        </p>
-        <p className="small">
-          Edit <code>src/App.jsx</code> and save to reload.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </p>
-      </header>
+    <div className="p-4">
+      <PartyA amount={amount} status={status} onAmountChange={handleAmountChange} />
+      <PartyB amount={amount} status={status} onSettle={handleSettle} onDispute={handleDispute} />
     </div>
   );
 }
