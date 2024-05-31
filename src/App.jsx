@@ -21,7 +21,7 @@ function App() {
   };
 
   return (
-    <div className="p-4">
+    <div className="flex p-4 space-x-4">
       <PartyA amount={amount} status={status} onAmountChange={handleAmountChange} />
       <PartyB amount={amount} status={status} onSettle={handleSettle} onDispute={handleDispute} />
     </div>
